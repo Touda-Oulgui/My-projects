@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Restaurant website</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      #nav-bar a:hover {
+        font-style: italic;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      .navbar {
+        margin-bottom: 20px;
+      }
+      h1,h2,h3,h4 {
+        font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+      }
+      .hover-bold a:hover {
+        font-weight: bold;
+        font-style: italic;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a href="#navBrand" class="navbar-brand">
+          Mark's Restaurant
+        </a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-5">
+            <li class="nav-item  px-3 ">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item  px-3">
+              <a class="nav-link " href="#contact">Contact</a>
+            </li>
+            <li class="nav-item  px-3">
+              <a class="nav-link" href="#products">Request Now</a>
+            </li>
+          </ul>
+          <form role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container-md">
+      <section id="home">
+        <div class="row justify-content-center align-items-center g-3">
+
+          <div class="col-md-5">
+            <img src="images/jus.png" alt="jus" class="img-fluid" width="100">
+            <div class="bg-body-secondary p-4 rounded text-center">
+              <h3 class="p-3">Hello to my restaurant website</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo rem commodi culpa delectus. Nisi eius saepe, minus eum labore dolores!</adipisicing></p>
+              <a href="#contact" class="btn btn-outline-warning m-3">Request Now!</a>
+            </div>
+          </div>
+
+          <div class="col-md-7">
+            <img src="images/restaurant.jpg" alt="My restaurant" class="img-fluid rounded d-none d-sm-block">
+            <div class="text-end p-3">
+              <img src="images/menu.png" alt="menu" class="img-fluid" width="100">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="products" class="m-5">
+        <div class="row justify-content-center align-items-center my-2 g-2">
+
+          <div class="col-md-5 col-lg-3 col-sm-8 text-center">
+            <div class="card bg-light shadow">
+              <div class="card-body">
+                <h5 class="card-title">Dish 1</h5>
+                <img src="images/meal2.jpg" class="card-img-top" alt="meal1" height="200">
+                <p class="card-text fw-bold display-5">20$</p>
+                <a href="#contact" class="btn btn-outline-warning px-5">Request</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-3 col-sm-8 text-center">
+            <div class="card bg-light shadow">
+              <div class="card-body">
+                <h5 class="card-title">Dish 2</h5>
+                <img src="images/meal4.jpg" class="card-img-top" alt="meal2" height="200">
+                <p class="card-text fw-bold display-5">15$</p>
+                <a href="#contact" class="btn btn-outline-warning px-5">Request</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-3 col-sm-8 text-center">
+            <div class="card bg-light shadow">
+              <div class="card-body">
+                <h5 class="card-title">Dish 3</h5>
+                <img src="images/meal5.jpg" class="card-img-top" alt="meal3" height="200">
+                <p class="card-text fw-bold display-5">10$</p>
+                <a href="#contact" class="btn btn-outline-warning px-5">Request</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-3 col-sm-8 text-center">
+            <div class="card bg-light shadow">
+              <div class="card-body">
+                <h5 class="card-title">Dish 4</h5>
+                <img src="images/meal6.jpg" class="card-img-top" alt="meal4" height="200">
+                <p class="card-text fw-bold display-5">30$</p>
+                <a href="#contact" class="btn btn-outline-warning px-5">Request</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center align-items-center my-2 g-2">
+
+          <div class="col-md-5 col-lg-3 col-sm-8 text-center">
+            <div class="card bg-light shadow">
+              <div class="card-body">
+                <h5 class="card-title">Dish 5</h5>
+                <img src="images/meal7.jpg" class="card-img-top" alt="meal5" height="200">
+                <p class="card-text fw-bold display-5">35$</p>
+                <a href="#contact" class="btn btn-outline-warning px-5">Request</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-3 col-sm-8 text-center">
+            <div class="card bg-light shadow">
+              <div class="card-body">
+                <h5 class="card-title">Dish 6</h5>
+                <img src="images/meal6.jpg" class="card-img-top" alt="meal6" height="200">
+                <p class="card-text fw-bold display-5">20$</p>
+                <a href="#contact" class="btn btn-outline-warning px-5">Request</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-3 col-sm-8 text-center">
+            <div class="card bg-light shadow">
+              <div class="card-body">
+                <h5 class="card-title">Dish 7</h5>
+                <img src="images/meal4.jpg" class="card-img-top" alt="meal7" height="200">
+                <p class="card-text fw-bold display-5">10$</p>
+                <a href="#contact" class="btn btn-outline-warning px-5">Request</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-5 col-lg-3 col-sm-8 text-center">
+            <div class="card bg-light shadow">
+              <div class="card-body">
+                <h5 class="card-title">Dish 8</h5>
+                <img src="images/meal2.jpg" class="card-img-top" alt="meal8" height="200">
+                <p class="card-text fw-bold display-5">12$</p>
+                <a href="#contact" class="btn btn-outline-warning px-5">Request</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="row justify-content-center align-items-center">
+          <h2 class="text-center text-success mt-5">Request your dish</h2>
+
+          <div class="col-md-5 mt-md-5">
+            <label for="choice" class="form-label">Write your choice:</label>
+            <input type="text" class="form-control" placeholder="dish1" id="choice">
+
+            <label for="phone" class="form-label"> Your phone number:</label>
+            <input type="number" class="form-control" placeholder="+212621455922" id="phone">
+
+            <label for="location" class="form-label"> Your adress:</label>
+            <input type="text" class="form-control" placeholder="Avenue Allal El Fassi Marrakech" id="location">
+
+            <div class="text-center m-5">
+              <a href="#" class="btn btn-outline-success">Submit</a>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-5 text-center d-none d-md-block">
+            <img src="images/rest4.jpg" alt="" class="img-fluid rounded">
+          </div>
+        </div>
+      </section>
+
+      <div class="row justify-content-center align-items-center g-3 mt-4">
+        <div class="col-md-4 col-8">
+          <h4 class="fst-italic">Customer's Feedbacks:</h4>
+          <blockquote class="p-4 my-3 bg-body-secondary rounded">"That plat that I request from the site is perfect , fast dilevary and everything is nice!! Thanks"<cite style="float: right;">--Bianca</cite></blockquote>
+
+          <blockquote class="p-4 my-3 rounded" style="background-color: rgb(255, 239, 168);">"Really perfect service!! I appreciate that restaurant and I will recommend my friend to visit that restaurant!"<cite style="float: right;">--Samar</cite></blockquote>
+
+          <blockquote class="p-4 my-3 rounded" style="background-color: rgb(171, 215, 255);">"I was invited to this restaurant which I didn'nt know before ,but, really I was excited because every things were perfect even waiters smile at our faces."<cite style="float: right;">--Mira</cite></blockquote>
+
+          <blockquote class="p-4 my-3 rounded" style="background-color: rgb(200, 255, 193);">"My wife has surprised me in our marriage memory and invite me to this restaurant to have dinner, I really was choked from its organization as well as its look."<cite style="float: right;">--Akram</cite></blockquote>
+        </div>  
+        
+        <div class="col-md-8 col-8 text-center">
+          <img src="images/meal1.jpg" alt="meals" class="rounded shadow img-fluid" width="200">
+          <p><b><i>Mark's Resataurant Meals...</i></b></p>
+          <img src="images/meal8.jpg" alt="meals" class="rounded shadow img-fluid" width="200">
+          <p><b><i>Mark's Resataurant Service...</i></b></p>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-body-secondary py-4 mt-5 hover-bold container-fluid text-center">
+      <div class="row justify-content-center align-items-center">
+
+        <div class="col-md-3">
+          <h3>See you Soon!!</h3>
+          <img src="images/jus.png" alt="jus" class="img-fluid" width="100">
+        </div>
+
+        <div class="col-md-3">
+          <h3>See us on Social media</h3>
+          <ul class="list-unstyled">
+              <li><a href="#" class="text-body-secondary"> Facebook</a></li>
+              <li><a href="#" class="text-body-secondary"> Twitter </a></li>
+              <li><a href="#" class="text-body-secondary"> WhatsApp</a></li>
+              <li><a href="#" class="text-body-secondary"> Instagram</a></li> 
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <img src="images/menu.png" alt="menu" class="img-fluid" width="100">
+        </div>
+      </div>  
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book resumes and review |Author</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style type="text/css">
+
+      h1,h2,h3,h4 {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      html,body {
+        overflow-x: hidden; /* Prevent scroll on narrow devices */
+      }
+      .input-search:focus {
+        outline: 2px solid rgb(240, 64, 117);
+        box-shadow: none;
+      }
+      .btn-search {
+        border: 1px solid rgb(240, 64, 117);
+        color: rgb(240, 64, 117);
+      }
+      .btn-search:hover {
+        background-color:rgb(240, 64, 117);
+        color: white;
+      }
+      .btn-join {
+        border: 1px solid rgb(17, 101, 122);
+        color: rgb(17, 101, 122);
+      }
+      .btn-join:hover {
+        background-color:rgb(17, 101, 122);
+        color: white;
+      }
+      .nav-item:hover {
+        color:white;
+        background-color: rgb(255, 150, 181);
+      }
+      @keyframes hello {
+        from {
+          color:rgb(108, 222, 250);
+          text-shadow: -2px 0 rgb(240, 64, 117) , 0 2px rgb(240, 64, 117), 2px 0 rgb(240, 64, 117) , 0 -2px rgb(240, 64, 117);
+        }
+        to {
+          color:rgb(240, 64, 117);
+          text-shadow: -2px 0 rgb(108, 222, 250) , 0 2px rgb(108, 222, 250), 2px 0 rgb(108, 222, 250) , 0 -2px rgb(108, 222, 250);
+        }
+      }
+      .hello {
+        animation-name:hello;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate-reverse;
+      }
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+      .border-top-purple {
+        border-top: 1px solid rgb(240, 64, 117) ;
+      }
+      .border-top-purple:last-child  {
+        padding-top: 4px;
+        padding-bottom: 0px;
+      }
+      main {
+        margin-top: 56px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Styling the navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" aria-label="Offcanvas navbar large">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="images/book6.png" alt="book" class="img-fluid" width="50">
+          <span class="fw-bold">Be a Leader</span>
+        </a>
+        <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3" id="offcanvasNavbarLabel">
+              <li class="nav-item px-1">
+                <a class="nav-link nav-link-active" aria-current="page" href="#">Politics</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link" href="#">Health</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link" href="#">Romance</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link" href="#">Litterature</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link" href="#">Economics</a>
+              </li>
+              <li class="nav-item px-1">
+                <a class="nav-link" href="#">Science</a>
+              </li>
+            </ul>
+            <form class="d-flex mt-3 mt-lg-0" role="search">
+              <input class="form-control me-2 input-search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-search" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container-md">
+      <!--Home page-->
+      <div class="row text-center g-3">
+                
+        <div class="col-md-4">
+          <h2 class="hello fw-bold" style="color:white">Hello to this website</h2>
+          <img src="images/book3.png" alt="book" class="img-fluid" width="200">
+          <div class="bg-body-secondary p-4 rounded mt-4">
+            <p>Here you can find the book review or resume you need</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, odit?</p>
+            <p style="color:rgb(17, 101, 122)" class="py-4 display-6"><b>Enjoy the trip!</b></p>
+            <a href="#" class="btn btn-join">Join us</a>
+          </div>
+        </div>
+
+        <div class="col-md-8">
+          <video autoplay muted loop>
+            <source src="images/book2.mp4" type="video/mp4">
+          </video>
+          <img src="images/book1.png" alt="book" class="img-fluid" width="200">
+        </div>
+      </div>
+
+      <!--Book review & resumes-->
+      <div class="row g-5 mt-5">
+
+        <div class="col-md-4">
+          <h3 class="p-4 bg-body-secondary mb-3">Other books</h3>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="row align-items-start align-items-md-center g-3 link-body-emphasis text-decoration-none border-top-purple">
+                  <div class="col-4">
+                    <img src="images/book2.png" alt="image" class="img-fluid">
+                  </div>
+  
+                  <div class="col-8 py-3">
+                    <h3 style="color: rgb(240, 64, 117) ;">Book title 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                  </div>
+                </a>
+              </li>
+  
+              <li>
+                <a href="#" class="row align-items-start align-items-md-center g-3 link-body-emphasis text-decoration-none border-top-purple">
+                  <div class="col-4">
+                    <img src="images/book2.png" alt="image" class="img-fluid">
+                  </div>
+  
+                  <div class="col-8 py-3">
+                    <h3 style="color: rgb(240, 64, 117) ;">Book title 2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                  </div>
+                </a>
+              </li>
+  
+              <li>
+                <a href="#" class="row align-items-start align-items-md-center g-3 link-body-emphasis text-decoration-none border-top-purple">
+                  <div class="col-4">
+                    <img src="images/book2.png" alt="image" class="img-fluid">
+                  </div>
+  
+                  <div class="col-8 py-3">
+                    <h3 style="color: rgb(240, 64, 117) ;">Book title 3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                  </div>
+                </a>
+              </li>
+  
+              <li>
+                <a href="#" class="row align-items-start align-items-md-center g-3 link-body-emphasis text-decoration-none border-top-purple">
+                  <div class="col-4">
+                    <img src="images/book2.png" alt="image" class="img-fluid">
+                  </div>
+  
+                  <div class="col-8 ">
+                    <h3 style="color: rgb(240, 64, 117) ;">Book title 4</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                  </div>
+                </a>
+              </li>
+              <li class="mt-4 text-center">
+                <a href="#" class="btn btn-search">
+                  Read More
+                </a>
+              </li>
+            </ul>
+
+            <div class="mt-5">
+              <h3 class="fst-italic">Other resources :</h3>
+            <ul class="list-unstyled">
+              <li><a href="#" class="link-body-emphasis">Facebook</a></li>
+              <li><a href="#" class="link-body-emphasis">Twitter</a></li>
+              <li><a href="#" class="link-body-emphasis">WhatsApp</a></li>
+              <li><a href="#" class="link-body-emphasis">Intagram</a></li>
+            </ul>
+            </div>
+
+            <div class="bg-body-secondary rounded p-4 mt-5">
+              <blockquote >
+                "If you can dream it you can do it!!"
+              </blockquote>
+              <cite style="float: right;">--Author</cite>
+            </div>
+
+            <div class="mt-5">
+              <h3 class="fst-italic mb-4">Suggested for you:</h3>
+              <p class="lead p-4 rounded" style="background: rgb(179, 234, 248);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio repellendus qui quia tenetur voluptatum unde at, placeat provident error.<a href="#" class="link-body-emphasis text-body-secondary fst-italic fw-bold text-decoration-none d-block">Read more!</a></p>
+
+              <p class="lead p-4 rounded" style="background: rgb(247, 214, 227);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio repellendus qui quia tenetur voluptatum unde at, placeat provident error.<a href="#" class="link-body-emphasis text-body-secondary fst-italic fw-bold text-decoration-none d-block">Read more!</a></p>
+    
+              <p class="lead p-4 rounded" style="background: rgb(215, 204, 255);">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id distinctio repellendus qui quia tenetur voluptatum unde at, placeat provident error.<a href="#" class="link-body-emphasis text-body-secondary fst-italic fw-bold text-decoration-none d-block">Read more!</a></p>
+              
+            </div>
+            
+        </div> 
+                
+        <div class="col-md-8">
+          <div class="mb-5">
+            <h3>Book 1</h2>
+            <h4>Title: Title 1</h3>
+            <h4>Author: Author 1</h3>
+            <h4>Review</h3>
+            <div class="p-3 bg-body-secondary rounded">
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit cupiditate consectetur, ipsum quasi veritatis fugit vel odit debitis illo voluptatibus.</p>
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio hic ea ipsa accusamus ducimus consectetur eius tempore explicabo. Quam, id!</p>
+            </div>
+            <h4>Resume</h3>
+            <div class="p-3 bg-body-secondary rounded">
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum placeat error corrupti culpa delectus quidem laudantium odit quia ipsa explicabo.</p>
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus tempore officiis eveniet blanditiis tenetur laudantium sed delectus ullam a cupiditate?</p>
+            </div>
+            <a href="#" style="float: right;">Source...</a>
+          </div>
+
+          <hr>
+          <div class="my-5">
+            <h3>Book 2</h2>
+            <h4>Title: Title 2</h3>
+            <h4>Author: Author 2</h3>
+            <h4>Review</h3>
+            <div class="p-3 bg-body-secondary rounded">
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit cupiditate consectetur, ipsum quasi veritatis fugit vel odit debitis illo voluptatibus.</p>
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio hic ea ipsa accusamus ducimus consectetur eius tempore explicabo. Quam, id!</p>
+            </div>
+            <h4>Resume</h3>
+            <div class="p-3 bg-body-secondary rounded">
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum placeat error corrupti culpa delectus quidem laudantium odit quia ipsa explicabo.</p>
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus tempore officiis eveniet blanditiis tenetur laudantium sed delectus ullam a cupiditate?</p>
+            </div>
+            <a href="#" style="float: right;">Source...</a>
+          </div>
+
+          <hr>
+          <div class="my-5">
+            <h3>Book 3</h2>
+            <h4>Title: Title 3</h3>
+            <h4>Author: Author 3</h3>
+            <h4>Review</h3>
+            <div class="p-3 bg-body-secondary rounded">
+              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit cupiditate consectetur, ipsum quasi veritatis fugit vel odit debitis illo voluptatibus.</p>
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio hic ea ipsa accusamus ducimus consectetur eius tempore explicabo. Quam, id!</p>
+            </div>
+            <h4>Resume</h3>
+            <div class="p-3 bg-body-secondary rounded">
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum placeat error corrupti culpa delectus quidem laudantium odit quia ipsa explicabo.</p>
+              <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus tempore officiis eveniet blanditiis tenetur laudantium sed delectus ullam a cupiditate?</p>
+            </div>
+            <a href="#" style="float: right;">Source...</a>
+          </div>
+
+          <div class="text-center">
+            <a href="#" class="btn btn-join">Read More!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center align-items-center mt-5">
+        <div class="m-4 p-4 bg-body-secondary rounded">
+          <h4 class="fst-italic">If you are interested in Becoming a member of our team , enter you personal information as well as your writing then we will email you to inform you if you are accepted.</h4>
+          <p class="lead mt-4 fw-bold text-center" style="color: rgb(240, 64, 117) ;">Good Luck!!</p>
+        </div>
+        <div class="col-md-4 d-none d-md-block">
+          <img src="images/book7.jpg" alt="book" class="img-fluid rounded">
+        </div>
+
+        <div class="col-md-6">
+          <form action="#">
+            <label for="name" class="form-label">Full name:</label>
+            <input type="text" id="name" class="form-control">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control">
+            <label for="writing" class="form-label">Your Writing:</label>
+            <textarea name="writing" id="writing" cols="30" rows="10" class="form-control"></textarea>
+            <a href="#" class="btn btn-search mt-4">Submit</a>
+
+          </form>
+        </div>
+        </div>
+      </div>
+
+      <br><br>
+      <div class="row justify-content-center align-items-center mt-5">
+        <div class="col-md-3 d-none d-md-block">
+          <img src="images/flower10.png" alt="flower" class="img-fluid" width="200">
+        </div>
+
+        <div class="col-md-3">
+          <a href="#" class="link-body-emphasis"><h3 class="fst-italic">Join Our Youtube Chanel</h3></a>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="col-md-6">
+            <img src="images/book8.jpg" alt="book" class="img-fluid rounded">
+          </div>
+        </div>
+    </main>
+
+    <footer class="bg-body-secondary text-center py-4 mt-5">
+      <h3>Contact us</h3>
+      <ul class="list-unstyled">
+        <li><a href="#" class="text-body-secondary link-body-emphasis text-decoration-none"><i class="bi bi-facebook"></i>Facebook</a></li>
+        <li><a href="#" class="text-body-secondary link-body-emphasis text-decoration-none"><i class="bi bi-twitter-x"></i>Twitter </a></li>
+        <li><a href="#" class="text-body-secondary link-body-emphasis text-decoration-none"><i class="bi bi-whatsapp"></i> WhatsApp</a></li>
+        <li><a href="#" class="text-body-secondary link-body-emphasis text-decoration-none"><i class="bi bi-instagram"></i>Instagram</a></li> 
+      </ul>
+    </footer>
+        
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
