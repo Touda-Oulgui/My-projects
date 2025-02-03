@@ -1,0 +1,512 @@
+* {
+    box-sizing: border-box;
+}
+html , body {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    background-color: var(--beige);
+}
+:root {
+    --beige:#fbf5dd;
+    --light-green-blue:#a6cdc6;
+    --dark-gray-green:#16404d;
+    --golden:#dda853;
+}
+
+/* Styling NavBar */
+nav {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 3rem;
+    top: .5rem;
+    left: 0;
+    margin:2rem auto 0 ;
+    width: 95%;
+    background-color:var(--light-green-blue);
+    z-index: 10;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+nav ul li {
+    display: inline-block;
+}
+nav ul li a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--dark-gray-green);
+    padding: 0.3rem .5rem ;
+    font-weight: 700;
+}
+nav ul li a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--dark-gray-green);
+    transition: width .5s ease-out;
+}
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* Styling the home page */
+header {
+    height: 85vh;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-image: radial-gradient(circle at top left,  var(--golden) 30%, transparent 33%) , radial-gradient(circle at bottom right,  var(--light-green-blue) 30% , transparent 33%) ;
+}
+
+header div.home-img {
+    position: relative;
+    transition: opacity .7s ease-out , transform 1s ease-out;
+}
+header img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50px/100px;
+    border: .2rem dotted var(--golden);
+}
+header div.home-img::after {
+    content: "Hello, I am Touda !";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background-color: var(--light-green-blue);
+    border-radius: 50px/100px;
+    opacity: 0;
+    transition: opacity .6s ease-out;
+}
+header div.home-img:hover::after {
+    opacity: .7;
+}
+header div.home-content {
+    margin: 0;
+    padding: 1rem ;
+    text-align: center;
+}
+header div.home-content h1 {
+    display: inline-block;
+    padding: .5rem;
+    margin: 0;
+    transition: opacity .7s ease-out , transform 1s ease-out;
+}
+header div.home-content h1:first-child {
+    color: var(--dark-gray-green);
+    background-color: var(--light-green-blue);
+    padding: .5rem 1rem;
+}
+header div.home-content h1:last-child {
+    color: var(--dark-gray-green);
+    border-bottom: .2rem solid var(--golden);
+    position: relative;
+    margin-top: .15rem;
+}
+
+
+/* Styling the scrolling icon */
+
+
+@keyframes animateScrollIcon {
+0% {
+    bottom: 1.5rem;
+}
+10% {
+    bottom: 2.5rem;
+}
+20% {
+    bottom: 0.75rem;
+}
+30% {
+    bottom: 1.5rem;
+}
+}
+.scroll-icon {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    font-size: 2rem;
+    font-weight: 700;
+    transform: rotate(90deg);
+    animation-name: animateScrollIcon;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    z-index: 9;
+}
+
+/* Styling the main of the portofolio */
+
+/* Styling headings of different sections */
+
+main div.paralax-1 {
+    height: 500px;
+    width: 100%;
+    background-image: url(images/developper.png) , radial-gradient( circle at center , var(--light-green-blue) 40% , var(--golden) 80%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+main section#about h1 , main section#skills-section h2 {
+    margin-bottom: 3rem ;
+    padding: .3rem;
+    font-size: 1.7rem;
+    position: relative;
+    transform: translateX(-100%);
+    opacity: 0;
+    border-bottom: 0.15rem solid gray;
+    transition: transform 1s ease-out , opacity 1.5s ease-out;
+
+}
+
+
+/* Styling the about section */
+
+main section#about {
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+ 
+main section#about div#about-content {
+    border: 0.1rem solid gray;
+    border-radius: 15px;
+    border-left: 1rem solid var(--dark-gray-green);
+    padding: 1.2rem .5rem;
+    transform: translateY(30%);
+    opacity: 0;
+    transition-delay: 2s;
+    transition: transform .7s ease-out , opacity 1s ease-out;
+}
+main section#about div#about-content::first-letter {
+    font-size: 1.5rem;
+    font-family: 700;
+    color: var(--darkgolden);
+}
+main section#about div#about-content p span {
+    font-weight: 600;
+}
+main section#about div#about-content small {
+    display: block;
+} 
+
+main section#about div:nth-child(3) {
+    overflow-x: hidden;
+}
+main section#about div img {
+    max-width: 100%;
+    height: auto;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 2s ease-out , opacity 2.5s ease-out;
+}
+
+/* Styling the skills section */
+
+main section#skills-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3rem auto 0;
+    padding: 3rem 0;
+    background-image: radial-gradient(circle at top left,  var(--golden) 30%, transparent 33%) , radial-gradient(circle at bottom right,  var(--light-green-blue) 30% , transparent 33%) ;
+}
+main section#skills-section div#skills-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px/50px;
+    border: .2rem dotted var(--golden);
+    scale: 0;
+    opacity: 0;
+    transition: scale .7s ease-out , opacity .7s ease-out;
+}
+main section#skills-section ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+main section#skills-section ul li {
+    display: inline-block;
+    padding: .4rem .7rem;
+    margin: .2rem ;
+    border: 0.15rem solid var(--dark-gray-green);
+    border-radius: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--dark-gray-green);
+    font-weight: 600;
+    opacity: 0;
+    transform: scaleX(0);
+    transition: transform .7s ease-out , opacity 1s ease-out;
+}
+
+/* Styling the footer */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100px;
+    background-color: var(--dark-gray-green);
+}
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+footer ul li {
+    display: inline-block;
+    scale: 0;
+    opacity: 0;
+    transition: scale .7s ease-out , opacity 1s ease;
+}
+footer ul li a {
+    display: inline-block;
+    position: relative;
+    color: var(--beige);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+footer ul li a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--beige);
+    transition: width .5s ease-out;
+}
+footer ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* Flex Boxes */
+.d-none {
+    display: none;
+}
+.col-1{width:5%;}
+.col-2{width:10%;}
+.col-3{width:15%;}
+.col-4{width:20%;}
+.col-5{width:25%;}
+.col-6{width:30%;}
+.col-7{width:35%;}
+.col-8{width:40%;}
+.col-9{width:45%;}
+.col-10{width:50%;}
+.col-11{width:55%;}
+.col-12{width:60%;}
+.col-13{width:65%;}
+.col-14{width:70%;}
+.col-15{width:75%;}
+.col-16{width:80%;}
+.col-17{width:85%;}
+.col-18{width:90%;}
+.col-19{width:95%;}
+.col-20{width:100%;}
+
+@media only screen and (min-width:376px) {
+    .col-xxxs-1{width:5%;}
+    .col-xxxs-2{width:10%;}
+    .col-xxxs-3{width:15%;}
+    .col-xxxs-4{width:20%;}
+    .col-xxxs-5{width:25%;}
+    .col-xxxs-6{width:30%;}
+    .col-xxxs-7{width:35%;}
+    .col-xxxs-8{width:40%;}
+    .col-xxxs-9{width:45%;}
+    .col-xxxs-10{width:50%;}
+    .col-xxxs-11{width:55%;}
+    .col-xxxs-12{width:60%;}
+    .col-xxxs-13{width:65%;}
+    .col-xxxs-14{width:70%;}
+    .col-xxxs-15{width:75%;}
+    .col-xxxs-16{width:80%;}
+    .col-xxxs-17{width:85%;}
+    .col-xxxs-18{width:90%;}
+    .col-xxxs-19{width:95%;}
+    .col-xxxs-20{width:100%;}
+}
+
+@media only screen and (min-width:410px) {
+    .col-xxs-1{width:5%;}
+    .col-xxs-2{width:10%;}
+    .col-xxs-3{width:15%;}
+    .col-xxs-4{width:20%;}
+    .col-xxs-5{width:25%;}
+    .col-xxs-6{width:30%;}
+    .col-xxs-7{width:35%;}
+    .col-xxs-8{width:40%;}
+    .col-xxs-9{width:45%;}
+    .col-xxs-10{width:50%;}
+    .col-xxs-11{width:55%;}
+    .col-xxs-12{width:60%;}
+    .col-xxs-13{width:65%;}
+    .col-xxs-14{width:70%;}
+    .col-xxs-15{width:75%;}
+    .col-xxs-16{width:80%;}
+    .col-xxs-17{width:85%;}
+    .col-xxs-18{width:90%;}
+    .col-xxs-19{width:95%;}
+    .col-xxs-20{width:100%;}
+}
+
+@media only screen and (min-width:500px) {
+    .col-xs-1{width:5%;}
+    .col-xs-2{width:10%;}
+    .col-xs-3{width:15%;}
+    .col-xs-4{width:20%;}
+    .col-xs-5{width:25%;}
+    .col-xs-6{width:30%;}
+    .col-xs-7{width:35%;}
+    .col-xs-8{width:40%;}
+    .col-xs-9{width:45%;}
+    .col-xs-10{width:50%;}
+    .col-xs-11{width:55%;}
+    .col-xs-12{width:60%;}
+    .col-xs-13{width:65%;}
+    .col-xs-14{width:70%;}
+    .col-xs-15{width:75%;}
+    .col-xs-16{width:80%;}
+    .col-xs-17{width:85%;}
+    .col-xs-18{width:90%;}
+    .col-xs-19{width:95%;}
+    .col-xs-20{width:100%;}
+
+    .d-xs-block {
+        display: block;
+    }
+}
+@media only screen and (min-width:610px) {
+    .col-sm-1{width:5%;}
+    .col-sm-2{width:10%;}
+    .col-sm-3{width:15%;}
+    .col-sm-4{width:20%;}
+    .col-sm-5{width:25%;}
+    .col-sm-6{width:30%;}
+    .col-sm-7{width:35%;}
+    .col-sm-8{width:40%;}
+    .col-sm-9{width:45%;}
+    .col-sm-10{width:50%;}
+    .col-sm-11{width:55%;}
+    .col-sm-12{width:60%;}
+    .col-sm-13{width:65%;}
+    .col-sm-14{width:70%;}
+    .col-sm-15{width:75%;}
+    .col-sm-16{width:80%;}
+    .col-sm-17{width:85%;}
+    .col-sm-18{width:90%;}
+    .col-sm-19{width:95%;}
+    .col-sm-20{width:100%;}
+    .d-sm-block {
+        display: block;
+    }
+}
+@media only screen and (min-width:768px) {
+    .col-md-1{width:5%;}
+    .col-md-2{width:10%;}
+    .col-md-3{width:15%;}
+    .col-md-4{width:20%;}
+    .col-md-5{width:25%;}
+    .col-md-6{width:30%;}
+    .col-md-7{width:35%;}
+    .col-md-8{width:40%;}
+    .col-md-9{width:45%;}
+    .col-md-10{width:50%;}
+    .col-md-11{width:55%;}
+    .col-md-12{width:60%;}
+    .col-md-13{width:65%;}
+    .col-md-14{width:70%;}
+    .col-md-15{width:75%;}
+    .col-md-16{width:80%;}
+    .col-md-17{width:85%;}
+    .col-md-19{width:95%;}
+    .col-md-20{width:100%;}
+}
+@media only screen and (min-width:992px) {
+    .col-lg-1{width:5%;}
+    .col-lg-2{width:10%;}
+    .col-lg-3{width:15%;}
+    .col-lg-4{width:20%;}
+    .col-lg-5{width:25%;}
+    .col-lg-6{width:30%;}
+    .col-lg-7{width:35%;}
+    .col-lg-8{width:40%;}
+    .col-lg-9{width:45%;}
+    .col-lg-10{width:50%;}
+    .col-lg-11{width:55%;}
+    .col-lg-12{width:60%;}
+    .col-lg-13{width:65%;}
+    .col-lg-14{width:70%;}
+    .col-lg-15{width:75%;}
+    .col-lg-16{width:80%;}
+    .col-lg-17{width:85%;}
+    .col-lg-19{width:95%;}
+    .col-lg-20{width:100%;}
+}
+@media only screen and (min-width:1200px) {
+    .col-xl-1{width:5%;}
+    .col-xl-2{width:10%;}
+    .col-xl-3{width:15%;}
+    .col-xl-4{width:20%;}
+    .col-xl-5{width:25%;}
+    .col-xl-6{width:30%;}
+    .col-xl-7{width:35%;}
+    .col-xl-8{width:40%;}
+    .col-xl-9{width:45%;}
+    .col-xl-10{width:50%;}
+    .col-xl-11{width:55%;}
+    .col-xl-12{width:60%;}
+    .col-xl-13{width:65%;}
+    .col-xl-14{width:70%;}
+    .col-xl-15{width:75%;}
+    .col-xl-16{width:80%;}
+    .col-xl-17{width:85%;}
+    .col-xl-19{width:95%;}
+    .col-xl-20{width:100%;}
+}
