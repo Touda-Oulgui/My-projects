@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task manager</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="task-manager.css">
+    </head>
+
+    <body>
+
+        <section id="primary-section">
+            <section id="home-section">
+                <h1>Task Manager</h1> 
+                <button type="button" > Add tasks </button>
+            </section>
+            
+            <section id="task-manager" style="scale:0;"> 
+                <h1>Task manager </h1>
+                <section class="task-manager-body">
+                    <form id="task-form" class="col-18 col-xs-16 col-sm-14 col-md-8 col-lg-6 col-xl-4">
+                        <label for="new-task">What do you want to do ?</label>
+                        <input type="text" placeholder="add new task..." id="new-task" > 
+                        <button type="submit">Add task</button>
+                    </form>
+                    <ul id="tasks" class="col-14 col-xs-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+    
+                    </ul>
+                </section>
+            </section>
+        </section>
+
+        <script>
+            const home_section = document.getElementById('home-section')
+            const home_section_button = home_section.lastElementChild
+            const home_section_height = home_section.getBoundingClientRect().height
+            const task_manager_section = document.getElementById('task-manager')
+
+            home_section_button.onclick = event => {
+                event.target.parentElement.style.display = 'none'
+                task_manager_section.style.scale = '1'
+            }
+
+
+
+            const taskForm = document.querySelector('#task-form') 
+            const tasks = document.getElementById('tasks')
+
+
+            const newTask = document.querySelector('#new-task')
+            newTask.onchange = event => {
+                const tasks_list = localStorage.getItem('tasks').split(',')
+                if( event.target.value.toLowerCase().trim() && tasks_list.includes( event.target.value.toLowerCase().trim()) ) {
+                    event.target.classList.add('empty-status')
+                    event.target.placeholder='task already added...'
+                    event.target.value=''
+                } else {
+                    event.target.placeholder='add new task...'
+                    event.target.classList.remove('empty-status')
+                }
+            }
+
+            const create_new_task_item = task_value => {
+                const task = document.createElement('li') 
+                const task_item_input = document.createElement('input')
+                task_item_input.value = task_value
+                task_item_input.type='text'
+                task_item_input.disabled=true
+                tasks.appendChild(task)
+                task.appendChild(task_item_input)
+                const menu = document.createElement('div')
+                menu.classList='menu'
+                menu.textContent='...'
+                const menuButtons = document.createElement('div')
+                menuButtons.classList='menu-buttons'
+                const removeButton = document.createElement('img')
+                const editButton = document.createElement('img')
+                removeButton.src="images/delete-icon.svg"
+                editButton.src="images/edit-icon.svg"
+                menu.addEventListener( 'click' , event => {
+                    const menu_list = document.querySelectorAll('.menu') 
+                    for( let menu of menu_list ) {
+                        if( menu.innerHTML != event.target.innerHTML ) {              
+                            menu.firstElementChild.classList.remove('show')
+                            menu.classList.remove('hover-effect') 
+                        } 
+                    }
+                    event.target.classList.toggle('hover-effect')
+                    event.target.firstElementChild.classList.toggle('show')
+                })  
+                removeButton.addEventListener( 'click' , event => {
+                    let taskToRemove = event.target.parentElement.parentElement.previousElementSibling
+                    const taskToRemoveText = taskToRemove.value.toLowerCase().trim()
+                    localStorage.setItem( 'tasks' , localStorage.getItem('tasks').split(',').filter( item => item !== taskToRemoveText ) )
+                    taskToRemove.parentElement.remove()
+                })
+
+                editButton.addEventListener( 'click' , event => {
+                    const task_to_modify = event.target.parentElement.parentElement.previousElementSibling
+                    const task_item = task_to_modify.parentElement
+                    task_item.classList.add('focus-status')
+                    const old_value = task_to_modify.value.toLowerCase().trim()
+                    const tasks = localStorage.getItem( 'tasks').split(',')
+                    const old_value_index = tasks.indexOf(old_value)
+                    task_to_modify.disabled=false
+                    
+                    task_to_modify.onkeydown = event => {
+                        
+                        if(event.key==='Enter') {
+                            const new_value = event.target.value.toLowerCase().trim()
+                            if( new_value ) {
+                                const tasks = localStorage.getItem( 'tasks').split(',')
+                                if( ! tasks.includes(new_value) || tasks.indexOf(new_value) == old_value_index) {
+                                    tasks.map( ( task , index ) => {
+                                        if( index == old_value_index ) tasks[index] = new_value
+                                    })
+                                    localStorage.setItem( 'tasks' , tasks)
+                                    task_to_modify.disabled = true
+                                    task_item.classList.remove('focus-status')
+                                    task_item.classList.remove('empty-status')
+                                } else {
+                                    task_item.classList.remove('focus-status')
+                                    task_item.classList.add('empty-status')
+                                    event.target.placeholder='task already added...'
+                                    event.target.value=''
+                                }
+                            } else {
+                                task_item.classList.remove('focus-status')
+                                task_item.classList.add('empty-status')
+                                event.target.placeholder='add task...'
+                            }
+                        }
+                    }
+                })
+                task.appendChild(menu)
+                menuButtons.appendChild(removeButton)
+                menuButtons.appendChild(editButton)
+                menu.appendChild(menuButtons)
+            }
+
+            if( localStorage.getItem('tasks')) {
+                for( let task of localStorage.getItem('tasks').split(',') ) {
+                    if(task) create_new_task_item(task)
+                } 
+            } else {
+                localStorage.setItem('tasks' , '')
+            }
+
+            taskForm.onsubmit = event => {
+                event.preventDefault()
+                const newTask_value = document.querySelector('#new-task').value.trim().toLowerCase()
+
+                if (!localStorage.getItem('tasks').split(',').includes(newTask_value) && newTask_value ) {
+                    localStorage.setItem('tasks' , localStorage.getItem('tasks') + newTask_value + ',' )
+                    create_new_task_item( newTask_value )
+                    newTask.value=''
+                }
+            }
+
+        </script>
+    </body>
+</html>
