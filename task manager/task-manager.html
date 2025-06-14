@@ -33,11 +33,11 @@
         <script>
             const home_section = document.getElementById('home-section')
             const home_section_button = home_section.lastElementChild
-            const home_section_height = home_section.getBoundingClientRect().height
             const task_manager_section = document.getElementById('task-manager')
 
             home_section_button.onclick = event => {
                 event.target.parentElement.style.display = 'none'
+                task_manager_section.style.display = 'block'
             }
 
 
