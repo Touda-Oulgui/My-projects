@@ -100,6 +100,7 @@ section#task-manager {
     overflow-y: scroll;
     height: 100%;
     backdrop-filter: blur(5px);
+    display:none;
 }
 section#task-manager h1 {
     padding: 0 1rem;
