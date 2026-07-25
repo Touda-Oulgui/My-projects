@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=backspace" />
+        <title> calculator</title>
+    </head>
+    <body>
+
+        <section class="container col-19 col-xxxs-18 col-xxs-15 col-xs-12 col-sm-11 col-md-11 col-lg-10 col-xl-7">
+            <audio id="clickSound" src="audio/soft-click-button.mp3" preload="auto"></audio>
+
+            <div> 
+                <input type="text" value="" id="output" data-result="" name="output" readonly/>
+            </div>
+
+            <div>
+
+                <input type="button" value="cos" class="highlated" onclick="{output.value+=this.value +'(' , output.dataset.result+='Math.cos(' }"/>
+                <input type="button" value="sin" class="highlated" onclick="{output.value+=this.value+'(' , output.dataset.result+='Math.sin(' }"/>
+                <input type="button" value="tan" class="highlated" onclick="{output.value+=this.value+'(' , output.dataset.result+='Math.tan(' }"/>
+                <input type="button" value="C" class="highlated" onclick="output.value='' , output.dataset.result=''"/>
+                <i class="material-symbols-outlined highlated " onclick="output.value=output.value.slice(0,-1) , output.dataset.result=output.dataset.result.slice(0,-1)"> backspace </i>
+        
+            </div>
+
+            <div>
+                 
+                <input type="button" value="%" class="highlated" onclick="{output.value+=this.value, output.dataset.result+='*0.01'}"/>
+                <input type="button" value="&#40;" class="highlated" onclick="{output.value+=this.value , output.dataset.result+=this.value}" />
+                <input type="button" value="&#41;" class="highlated" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="exp" class="highlated" onclick="{output.value+=this.value+'(' , output.dataset.result+='Math.exp('}"/>
+                <input type="button" value="/" class="highlated" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+        
+            </div>
+
+            <div>
+                
+                <input type="button" value="&#8730;" class="highlated" onclick="{output.value+=this.value+'(' , output.dataset.result+='Math.sqrt('}"/>
+                <input type="button" value="7" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="8" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="9" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="*" class="highlated" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+
+            </div>
+
+            <div>
+                
+                <input type="button" value="^"  class="highlated" onclick="{output.value+=this.value , output.dataset.result+='**'}"/>
+                <input type="button" value="4" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="5" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="6" onclick="{output.value+=this.value , output.dataset.result+=this.value} "/>
+                <input type="button" value="-" class="highlated" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+        
+            </div>
+
+            <div>
+                
+                <input type="button" value="&pi;" class="highlated" onclick="{output.value+=this.value , output.dataset.result+='Math.PI'}"/>
+                <input type="button" value="1" onclick="{output.value+=this.value, output.dataset.result+=this.value}"/>
+                <input type="button" value="2" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="3"  onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="+" class="highlated" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+        
+            </div>
+
+            <div>
+                
+                <input type="button" value="e" class="highlated" onclick="{output.value+=this.value , output.dataset.result+='Math.E'}"/>
+                <input type="button" value="." class="highlated" onclick="{output.value+=this.value , output.dataset.result+=this.value}"/>
+                <input type="button" value="=" id="equal" />
+
+            </div>
+
+        </section>
+        <script>
+            let output = document.getElementById('output')
+            let equal = document.getElementById('equal')
+            equal.onclick = () => {
+                let result = document.getElementById('output').dataset.result
+                if(result) {
+                    try {
+                    output.value = new Function(`return ${result}`)()
+                    } catch(err) {
+                        output.value = "Error"
+                        result=""
+                    }
+                } else {
+                    output.value=""
+                }
+                
+            }
+
+            const buttons = document.getElementsByTagName('input');
+            const sound = document.getElementById('clickSound');
+            let delet_icon = document.getElementsByTagName('i')[0]
+            delet_icon.addEventListener('click', () => {
+                sound.currentTime = 0; // Reset to start for rapid clicks
+                sound.play();
+            });
+            for (let button of buttons) {
+                button.addEventListener('click', () => {
+                sound.currentTime = 0; // Reset to start for rapid clicks
+                sound.play();
+                });
+            }
+
+        </script>
+    </body>
+</html>
