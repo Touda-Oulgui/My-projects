@@ -10,6 +10,6 @@ Le projet montre mes compétences en mise en page et design responsive.
 - JavaScript
 
 ## Listes des projets
-https://touda-oulgui.github.io/My-projects/calculator/calculator.html
-https://touda-oulgui.github.io/My-projects/task manager/task-manager.html
-https://touda-oulgui.github.io/My-projects/blog/blog.html
+##https://touda-oulgui.github.io/My-projects/calculator/calculator.html
+##https://touda-oulgui.github.io/My-projects/task manager/task-manager.html
+##https://touda-oulgui.github.io/My-projects/blog/blog.html
