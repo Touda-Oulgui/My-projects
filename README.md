@@ -9,6 +9,7 @@ Le projet montre mes compétences en mise en page et design responsive.
 - CSS3
 - JavaScript
 
-## Comment tester le projet
-Ouvrir le lien https://touda-oulgui.github.io/My-projects suivi du nom de dossier (blog, task manager, portofolio) puis nom du fichier html, comme suit :
-https://touda-oulgui.github.io/My-projects/portofolio/prtofolio.html
+## Listes des projets
+https://touda-oulgui.github.io/My-projects/calculator/calculator.html
+https://touda-oulgui.github.io/My-projects/task manager/task-manager.html
+https://touda-oulgui.github.io/My-projects/blog/blog.html
